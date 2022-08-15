@@ -1,0 +1,36 @@
+﻿@model Calischool.ViewModel.LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+  <div class=" container card bg-light border border-primary border-top-0 border-bottom-0 rounded-left rounded-right" style="width:500px" >
+      <form asp-action="Login">
+
+          <div class="card-body">
+              <div class="card-header bg-primary">
+   		        <h3 style="color: white;">Login</h3>
+              </div>
+              <div>
+                   <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+              </div>
+              <div>
+                   <label asp-for="Password" class="control-label"></label>
+                    <input asp-for="Password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+              </div>
+              <div>
+                   <label asp-for="RememberMe" class="form-label">
+                         <input type="checkbox" asp-for="RememberMe" required>
+                            @Html.DisplayNameFor(m => m.RememberMe)
+                     </label>
+              </div>
+              <div  class="checkbox">
+                    <button type="submit"class="border text-white w-75 ml-5 text-center badge-pill border-primary bg-primary">Login</button>
+                   @*<input type="submit" value="Create" class="border text-white w-30 badge-pill border-primary bg-primary" />*@
+              </div>
+          </div>
+      </form>
+
+ </div>

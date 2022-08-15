@@ -1,0 +1,103 @@
+﻿@model Calischool.Models.ApplicationUser
+
+@{
+    ViewData["Title"] = "RegisterStudent";
+}
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container p-3">
+     <div class="row pt-4">
+         <div class="col-3">
+             <h2 class="text-primary">Student Portal</h2>
+         </div>
+         
+         <div class="col-7 text-end">
+            <a asp-controller="#" asp-action="#" class="btn btn-primary border border-info">Html</a>
+            <a asp-controller="#" asp-action="#" class="btn btn-primary border border-info ">Css</a>
+            <a asp-controller="#" asp-action="#" class="btn btn-primary border border-info ">Bootstrap</a>
+            <a asp-controller="#" asp-action="#" class="btn btn-primary border border-info">Javascript</a>
+            <a asp-controller="#" asp-action="#" class="btn btn-primary border border-info ">Jquery</a>
+            <a asp-controller="#" asp-action="#" class="btn btn-primary border border-info ">C#</a>
+            <a asp-controller="#" asp-action="#" class="btn btn-primary border border-info">Asp.Net MCV</a>
+         </div>
+          <div class="col-2 text-end">
+             <a asp-controller="Student" asp-action="Edit" class="btn btn-primary"/>
+               <i class="bi bi-plus-circle"></i>
+               &nbsp; Edit Details
+         </div>
+
+     </div>
+</div>
+<br /><br />
+
+
+@*<div class="container">
+    <table class="w-100 p-0 m-0">
+     
+        <tbody>
+           <tr class="row">
+             <td colspan="1">
+               <td>
+                    <a class="navbar-brand text-primary" asp-area="" asp-controller="#" asp-action="#">
+                        <h1>
+                            <i>Html</i>
+                        </h1>
+                    </a>
+               </td>
+               <td>
+                    <a class="navbar-brand text-primary" asp-area="" asp-controller="#" asp-action="#">
+                        <h1>
+                            <i>Css</i>
+                        </h1>
+                    </a>
+               </td>
+               <td>
+                     <a class="navbar-brand text-primary" asp-area="" asp-controller="#" asp-action="#">
+                        <h1>
+                            <i>Boostrap</i>
+                        </h1>
+                    </a>
+               </td>
+               <td>
+                    <a class="navbar-brand text-primary" asp-area="" asp-controller="#" asp-action="#">
+                        <h1>
+                            <i>Javascript</i>
+                        </h1>
+                    </a>>
+               </td>
+               <td>
+                    <a class="navbar-brand text-primary" asp-area="" asp-controller="#" asp-action="#">
+                        <h1>
+                            <i>Jquery</i>
+                        </h1>
+                    </a>>
+               </td>
+               <td>
+                    <a class="navbar-brand text-primary" asp-area="" asp-controller="#" asp-action="#">
+                        <h1>
+                            <i>C#</i>
+                        </h1>
+                    </a>>
+               </td>
+               <td>
+                    <a class="navbar-brand text-primary" asp-area="" asp-controller="#" asp-action="#">
+                        <h1>
+                            <i>Dot net mvc</i>
+                        </h1>
+                    </a>>
+               </td>
+           
+               <td >
+                   <img src="~/FirstProject/img1/bivi.jpeg"class="w-50%"/>
+               </td>
+           </tr>
+         
+        <tbody>
+    </table>
+</div>
+
+*@

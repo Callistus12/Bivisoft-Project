@@ -1,0 +1,111 @@
+﻿@model IEnumerable<Calischool.Models.ApplicationUser>
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+
+  <div class="col-4">
+       <h2 class="text-primary">Category Lists</h2>
+  </div>
+<br /><br />
+
+    <table class="table table-bordered table-striped col-lg-12 col-md-12 col-sm-12" style="width:100%">
+        <thead class="bg-primary">
+            <tr>
+                <th>
+                    FirstName
+                </th>
+                <th>
+                    MiddleName
+                </th>
+                <th>
+                    LastName
+                </th>
+                <th>
+                    RegNumber
+                </th>
+                <th>
+                    DateOfBirth
+                </th>
+                <th>
+                    RedsidentAddress
+                </th>
+                <th>
+                        Country
+                </th>
+                <th>
+                    State
+                </th>
+                <th>
+                    LGA
+                </th>
+                <th>
+                    Qualification
+                </th>
+                <th>
+                    Displine
+                </th>
+                <th>
+                    Email
+                </th>
+           
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Count() > 0 && Model != null)
+            {
+                foreach (var obj in Model)
+                {
+                    <tr>
+
+                        <td >
+                            @obj.FirstName
+                        </td>
+                        <td>
+                            @obj.MiddleName
+                        </td>
+                        <td>
+                            @obj.LastName
+                        </td>
+                        <td>
+                            @obj.RegNumber
+                        </td>
+                        <td>
+                            @obj.DateOfBirth
+                        </td>
+                        <td>
+                            @obj.RedsidentAddress
+                        </td>
+                        <td>
+                            @obj.Country
+                        </td>
+                        <td>
+                            @obj.State
+                        </td>
+                        <td>
+                            @obj.LGA
+                        </td>
+                        <td>
+                            @obj.Qualification
+                        </td>
+                        <td>
+                            @obj.Displine
+                        </td>
+                            <td>
+                            @obj.Email
+                        </td>
+               
+                        <td>
+                            <div class="btn-group w-75" role="group">
+                                @* <a asp-controller="Account" asp-action="EditProfile" asp-route-regNumber="@obj.Id" class="btn btn-primary mx-2">
+                                    <i class="bi bi-pencil-square"></i> &nbsp Edit</a>*@
+                                <a asp-controller="Account" asp-action="DeleteProfile" asp-route-Email="@obj.Email" class="btn btn-danger ">
+                                    <i class="bi bi-trash"></i> &nbsp Delete</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            }
+        
+        </tbody>
+    </table>
