@@ -1,6 +1,8 @@
 ﻿using Calischool.Data;
 using Calischool.Models;
 using Calischool.Services;
+using Calischool.ViewModel;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Calischool.Controllers
@@ -9,37 +11,40 @@ namespace Calischool.Controllers
     {
         private readonly ApplicationDbContext _db;
         private readonly IAccountServices _accountServices;
-        public StudentController(ApplicationDbContext db, IAccountServices accountServices)
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly SignInManager<ApplicationUser> _signManager;
+        public StudentController(ApplicationDbContext db, IAccountServices accountServices, UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signManager)
         {
             _db = db;
             _accountServices = accountServices;
+            _userManager = userManager;
+            _signManager = signManager;
         }
         public IActionResult Index()
         {
             return View();
         }
         //Get
-        public IActionResult Edit(int id)
+        public IActionResult Edit()
         {
-            var editUser = _accountServices.Edit(int.Parse(id.ToString()));
-            if(editUser != null)
-            {
-                return View(editUser);
-            }
+            HttpContext.User.Identities.GetHashCode();
             return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(ApplicationUser obj)
+        public IActionResult Edit(RegisterViewModel registerView)
         {
-            if (ModelState.IsValid)
+            if (registerView == null)
             {
-                _db.StudentRegisters.Update(obj);
-                _db.SaveChanges();
-                TempData["Success"] = "Category Updated successfully!";
+                return null;
+            }
+            var updateUser = _userManager.FindByEmailAsync(registerView.Email).Result;
+            if (updateUser != null)
+            {
+                _userManager.UpdateAsync(updateUser);
                 return RedirectToAction("Index");
             }
-            return View(obj);
+            return View(registerView);
         }
     }
 }

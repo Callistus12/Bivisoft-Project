@@ -12,11 +12,13 @@ namespace Calischool.Controllers
         private readonly ApplicationDbContext _db;
         private readonly IAccountServices _accountServices;
         private readonly UserManager<ApplicationUser> _userManager;
-        public AccountController(ApplicationDbContext db, IAccountServices accountServices, UserManager<ApplicationUser> userManager)
+        private readonly SignInManager<ApplicationUser> _signManager;
+        public AccountController(ApplicationDbContext db, IAccountServices accountServices, UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signManager)
         {
             _db = db;
             _accountServices = accountServices;
             _userManager = userManager;
+            _signManager = signManager;
         }
         public IActionResult Index()
         {
@@ -43,7 +45,7 @@ namespace Calischool.Controllers
                 if (userRegistration != null)
                 {
                     TempData["success"] = "Your Details Are Registered successfully!";
-                    return RedirectToAction("Login","Account");
+                    return RedirectToAction("Login");
                 }
             }
             return View(obj);
@@ -72,6 +74,10 @@ namespace Calischool.Controllers
             return View(loginViewModel);
            
         }
-      
+        public IActionResult LogOut()
+        {
+            _signManager.SignOutAsync();
+            return RedirectToAction("Index", "Home");
+        }
     }
 }

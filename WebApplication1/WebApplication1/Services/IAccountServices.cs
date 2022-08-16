@@ -7,6 +7,6 @@ namespace Calischool.Services
     {
         ApplicationUser Login(LoginViewModel loginViewModel);
         ApplicationUser RegisterUserDetails(RegisterViewModel obj);
-        ApplicationUser Edit(int? id);
+        //ApplicationUser Edit(int? id);
     }
 }

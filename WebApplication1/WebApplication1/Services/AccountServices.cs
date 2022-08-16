@@ -63,8 +63,6 @@ namespace Calischool.Services
             var creatUser = _userManager.CreateAsync(newdb, obj.Password).Result;
             if (creatUser.Succeeded)
             { 
-
-               //var registeredUserIsRole = _db.StudentRegisters.Where(a => a.Password == "====");
                 if (obj.Password == "====")
                 {
                     var registeredUser = _userManager.FindByEmailAsync(obj.Email).Result;
@@ -80,21 +78,21 @@ namespace Calischool.Services
             }
            return null;
         }
-        public ApplicationUser Edit(int? id)
-        {
-            if(id == 0 || id == null)
-            {
-                return null;
-            }
+        //public ApplicationUser Edit(int? id)
+        //{
+        //    if(id == 0 || id == null)
+        //    {
+        //        return null;
+        //    }
            
-            var userIdFromDb = _db.StudentRegisters.Find(id);
-            if(userIdFromDb == null)
-            {
-                return null;
-            }
-            return userIdFromDb;
+        //    var userIdFromDb = _db.StudentRegisters.Find(id);
+        //    if(userIdFromDb == null)
+        //    {
+        //        return null;
+        //    }
+        //    return userIdFromDb;
             
-        }
+        //}
     }
 
 }
