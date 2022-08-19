@@ -2,6 +2,7 @@
 using Calischool.Models;
 using Calischool.ViewModel;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.VisualStudio.Services.Users;
 
 namespace Calischool.Services
 {
@@ -31,13 +32,13 @@ namespace Calischool.Services
                 var userCheck = _signManager.CanSignInAsync(getUserEmail).Result;
                 if (userCheck)
                 {
-                    _signManager.PasswordSignInAsync(getUserEmail, loginViewModel.Password, true, false);
+                   var checkUser = _signManager.PasswordSignInAsync(getUserEmail, loginViewModel.Password, true, false).Result;
                     return getUserEmail;
                 }
             }
             return null;
         }
-        public ApplicationUser RegisterUserDetails(RegisterViewModel obj)
+        public async Task <ApplicationUser> RegisterUserDetails(RegisterViewModel obj)
         {
             var newdb = new ApplicationUser
             {
@@ -46,53 +47,35 @@ namespace Calischool.Services
                 Gender = obj.Gender,
                 FirstName = obj.FirstName,
                 LastName = obj.LastName,
-                MiddleName = obj.MiddleName,
-                DateOfBirth = obj.DateOfBirth,
-                RedsidentAddress = obj.RedsidentAddress,
-                Country = obj.Country,
-                State = obj.State,
-                LGA = obj.LGA,
-                Qualification = obj.Qualification,
-                Displine = obj.Displine,
+                PhoneNumber = obj.PhoneNumber,
             };
-          var checkEmail = _userManager.FindByEmailAsync(obj.Email).Result;
-            if (checkEmail != null)
-            {
-                return null;
-            }
-            var creatUser = _userManager.CreateAsync(newdb, obj.Password).Result;
-            if (creatUser.Succeeded)
-            { 
-                if (obj.Password == "====")
-                {
-                    var registeredUser = _userManager.FindByEmailAsync(obj.Email).Result;
-                    _userManager.AddToRoleAsync(registeredUser, "Admin");
-                    return registeredUser;
-                }
-                else
-                {
-                    var registeredUser = _userManager.FindByEmailAsync(obj.Email).Result;
-                    _userManager.AddToRoleAsync(registeredUser, "Student");
-                    return registeredUser;
-                }
-            }
-           return null;
+          
+           return newdb;
         }
-        //public ApplicationUser Edit(int? id)
-        //{
-        //    if(id == 0 || id == null)
-        //    {
-        //        return null;
-        //    }
-           
-        //    var userIdFromDb = _db.StudentRegisters.Find(id);
-        //    if(userIdFromDb == null)
-        //    {
-        //        return null;
-        //    }
-        //    return userIdFromDb;
-            
-        //}
+        public EditStudentViewModel GetUserDetails(string userName)
+        {
+            var userDetail = _userManager.FindByNameAsync(userName).Result;
+            if (userDetail != null)
+            {
+                var newStudent = new EditStudentViewModel
+                {
+                    Email = userDetail.Email,
+                    Gender = userDetail.Gender,
+                    FirstName = userDetail.FirstName,
+                    LastName = userDetail.LastName,
+                    MiddleName = userDetail.MiddleName,
+                    DateOfBirth = userDetail.DateOfBirth,
+                    RedsidentAddress = userDetail.RedsidentAddress,
+                    Country = userDetail.Country,
+                    State = userDetail.State,
+                    LGA = userDetail.LGA,
+                    Qualification = userDetail.Qualification,
+                    Displine = userDetail.Displine,
+                };
+                 return newStudent;
+            }
+            return null;
+        }
     }
 
 }

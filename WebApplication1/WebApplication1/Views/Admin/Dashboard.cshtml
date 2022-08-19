@@ -4,10 +4,20 @@
 }
 
 
-  <div class="col-4">
-       <h2 class="text-primary">Category Lists</h2>
+  <div class="row">
+       <h2 class="text-primary">Student Lists</h2>
+       <div class="card col-lg-4 col-sm-4">
+            <div class="card-header bg-primary">
+                <h2 class="text-light text-center">Number of Students</h2>
+            </div>
+            <div class="card-body">
+                <p>@Model.Count()</p>
+            </div>
+                
+       </div>
   </div>
 <br /><br />
+
 
     <table class="table table-bordered table-striped col-lg-12 col-md-12 col-sm-12" style="width:100%">
         <thead class="bg-primary">

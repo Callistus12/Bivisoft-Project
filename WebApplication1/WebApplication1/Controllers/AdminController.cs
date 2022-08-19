@@ -41,28 +41,54 @@ namespace Calischool.Controllers
             return View(applicationUser);
         }
         //Get
+        //Get
+        [HttpGet]
         public IActionResult Edit()
         {
-            HttpContext.User.Identities.GetHashCode();
-            return View();
+            var userName = User.Identity.Name;
+
+            var detailsOfMyUser = _accountServices.GetUserDetails(userName);
+
+            return View(detailsOfMyUser);
+
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(RegisterViewModel registerView)
+        public IActionResult Edit(EditStudentViewModel obj)
         {
-            if (registerView == null)
+            if (obj == null)
             {
                 return null;
             }
-            var updateUser = _userManager.FindByEmailAsync(registerView.Email).Result;
+            var updateUser = _userManager.FindByEmailAsync(obj.Email).Result;
             if (updateUser != null)
             {
-                _userManager.UpdateAsync(updateUser);
+                updateUser.Country = obj.Country;
+                updateUser.Displine = obj.Displine;
+                updateUser.DateOfBirth = obj.DateOfBirth;
+                updateUser.FirstName = obj.FirstName;
+                updateUser.MiddleName = obj.MiddleName;
+                updateUser.LastName = obj.LastName;
+                updateUser.Email = obj.Email;
+                updateUser.Gender = obj.Gender;
+                updateUser.State = obj.State;
+                updateUser.Qualification = obj.Qualification;
+                updateUser.RedsidentAddress = obj.RedsidentAddress;
+                updateUser.LGA = obj.LGA;
+
+
+
+
+                _db.StudentRegisters.Update(updateUser);
+                _db.SaveChanges();
                 return RedirectToAction("Dashboard");
             }
-            return View(registerView);
+            return View(obj);
         }
     }
-
-
 }
+
+   
+
+
+

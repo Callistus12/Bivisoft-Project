@@ -6,7 +6,7 @@ namespace Calischool.Services
     public interface IAccountServices
     {
         ApplicationUser Login(LoginViewModel loginViewModel);
-        ApplicationUser RegisterUserDetails(RegisterViewModel obj);
-        //ApplicationUser Edit(int? id);
+        Task<ApplicationUser> RegisterUserDetails(RegisterViewModel obj);
+        EditStudentViewModel GetUserDetails(string userName);
     }
 }
