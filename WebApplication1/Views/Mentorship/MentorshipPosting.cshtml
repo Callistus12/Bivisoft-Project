@@ -1,0 +1,96 @@
+﻿@model Calischool.Models.Mentorship
+
+@{
+    ViewData["Title"] = "MentorshipPosting";
+	 Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+
+
+
+
+
+
+  <div class=" container cardreg  border border-primary h-100 " @*style="height:500px;"*@ >
+	
+      <div class="card-body row">
+          <div class="col-sm-4 col-xs-4 col-md-4 col-lg-4 col-xl-4 text-center">
+			 <div><i class="bi bi-laptop" style="font-size: 150px; color:white;"></i></div>
+			  <div class="text-white">
+				  <h3>welcome</h3><br /><br />
+				  <p>
+					  The Greatest investment is investing inthe life of Young lad!
+				  </p>
+			  </div>
+			 
+          </div>
+		  <div class="col-sm-4 col-xs-4 col-md-8 col-lg-8 col-xl-8 bg-light py-4 mb-4  register " >
+			    
+
+			  <div class="bg-primary text-white text-center reg1">
+				  <h2>MENTORSHIP ASSIGNING FORM</h2>
+			  </div>
+			  <form asp-controller="Mentorship" asp-action="MentorPosting" method="post">
+				  <div class="row reg">
+	    			<div class="col-sm-4 col-xs-4 col-md-3 col-lg-3 col-xl-3 mt-5">
+	    				<div class="form-group">
+							<input asp-for="FirstName"class="border form-control border-primary" placeholder="First Name*"  />
+							<span asp-validation-for="FirstName" class="text-danger"></span>
+						
+						</div>		
+	    			</div>
+					<div class="col-sm-4 col-xs-4 col-md-3 col-lg-3 col-xl-3 mt-5 ">
+	    				<div class="form-group">
+							<input asp-for="LastName"class="border form-control border-primary" placeholder="Last Name*" />
+							<span asp-validation-for="LastName" class="text-danger"></span>
+						</div>		
+	    			</div>
+					<div class="col-sm-4 col-xs-4 col-md-3 col-lg-4 col-xl-4 mt-5 ">
+	    				<div class="form-group">
+							<input asp-for="Email"class="border form-control border-primary"placeholder="your Email*" /> 
+							<span asp-validation-for="Email" class="text-danger"></span>
+						</div>		
+	    			</div>
+	    		</div>
+				<div class="row reg">
+					<div class="col-sm-4 col-xs-4 col-md-4 col-lg-5 col-xl-5 ">
+	    				<div class="form-group">
+							<input asp-for="CourseToMentor"class="border form-control border-primary"placeholder="Enter course title*" /> 
+							<span asp-validation-for="CourseToMentor" class="text-danger"></span>
+						</div>		
+	    			</div>
+	    			<div class="col-sm-4 col-xs-4 col-md-4 col-lg-5 col-xl-5 ">
+	    				<div class="form-group">
+							<input asp-for="NameOfTheMentor"class="border form-control border-primary" placeholder="Enter the mentor's Name*" />
+							<span asp-validation-for="NameOfTheMentor" class="text-danger"></span>
+						</div>
+	    			</div>
+				</div>
+				<div class="row reg">
+					<div class="col-sm-4 col-xs-4 col-md-4 col-lg-5 col-xl-5">
+	    				<div class="form-group">
+							<input asp-for="PhoneNumberOfMentor"class="border form-control border-primary" placeholder="Enter Phone Number mentor*" /> 
+							<span asp-validation-for="PhoneNumberOfMentor" class="text-danger"></span>
+						</div>		
+	    			</div>
+	    			<div class="col-sm-4 col-xs-4 col-md-4 col-lg-5 col-xl-5">
+	    				<div class="form-group">
+							<input asp-for="CourseDuration"class="border form-control border-primary" placeholder="Enter Course Duration*" /> 
+							<input asp-for="Id" hidden /> 
+							<span asp-validation-for="CourseDuration" class="text-danger"></span>
+						</div>		
+	    			</div>
+				</div>
+				  <div  class="checkbox text-center mb-3 regbtn">
+					  <button type="submit"class="border text-white w-50 badge-pill border-primary bg-primary">Save</button>
+				  </div>
+			  </form>
+		  </div>
+      </div>
+
+ </div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,16 @@
+.dat{
+	font-family: sans-serif;
+}
+/*.butg{*/
+	border-color: lightblue;
+	border-radius: 20px;
+	background-color: red;
+}
+
+.testValidity{
+	background-color: yellow;
+	color: red;
+}
+body{
+	background-color: gray;
+}

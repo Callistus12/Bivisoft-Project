@@ -1,0 +1,155 @@
+﻿@model Calischool.ViewModel.RegisterViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+	  Layout = "~/Views/Shared/_Layout.cshtml";
+ 
+}
+
+
+
+
+
+
+
+
+ 
+<div class=" container cardreg  border border-primary h-100 "  >
+		<div class="card-body row">
+			<div class="col-sm-4 col-xs-4 col-md-4 col-lg-4 col-xl-4 text-center">
+				<div><i class="bi bi-laptop" style="font-size: 150px; color:white;"></i></div>
+				<div class="text-white">
+					<h3>BRAVO</h3><br /><br />
+					<p><strong>
+						Keep giving it all it takes, untill you get all it contains!
+						</strong>
+					</p>
+				</div>
+				
+			 
+			</div>
+			<div class="col-sm-4 col-xs-4 col-md-8 col-lg-8 col-xl-8 bg-light py-4 mb-4 register " >
+				<div class="col-sm-4 col-xs-4 col-md-4 col-lg-8 col-xl-8 bg-primary text-white text-center reg1">
+					<h2>MY PROFILES</h2>
+				</div>
+				<form asp-controller="Admin" asp-action="Edit" method="post" id="nameForInput">
+
+				<div class="row">
+	    			<div class="col-sm-4 col-xs-4 col-md-4 col-lg-4 col-xl-4">
+	    				<div class="form-group">
+							<label  asp-for="FirstName" class="control-label"></label>
+							<input disabled asp-for="FirstName"class="border form-control border-primary"   />
+							<span asp-validation-for="FirstName" class="text-danger"></span>
+						
+						</div>		
+	    			</div>
+	    			<div class="col-sm-4 col-xs-4 col-md-4 col-lg-4 col-xl-4">
+	    				<label asp-for="MiddleName" class="control-label"></label>
+							<input disabled asp-for="MiddleName"class="border form-control border-primary"   />
+							<span asp-validation-for="MiddleName" class="text-danger"></span>
+					</div>
+					<div class="col-sm-4 col-xs-4 col-md-4 col-lg-4 col-xl-4">
+	    				<div class="form-group">
+							<label asp-for="LastName" class="control-label"></label>
+							<input disabled asp-for="LastName"class="border form-control border-primary"  />
+							<span asp-validation-for="LastName" class="text-danger"></span>
+						</div>		
+	    			</div>
+	    			
+				</div>
+				<div class="row">
+	    			<div class="col-sm-4 col-xs-4 col-md-4 col-lg-4 col-xl-4">
+	    				<div class="form-group">
+							<label asp-for="Email" class="control-label"></label>
+							<input readonly disabled type="email"  asp-for ="Email"class="border form-control border-primary" /> 
+							<span asp-validation-for="Email" class="text-danger"></span>
+						</div>		
+	    			</div>
+	    			<div class="col-sm-4 col-xs-4 col-md-4 col-lg-4 col-xl-4">
+	    				<div class="form-group">
+							<label asp-for="Displine" class="control-label"></label>
+							<input disabled asp-for="Displine"class="border form-control border-primary" />
+							<span asp-validation-for="Displine" class="text-danger"></span>
+						</div>
+	    			</div>
+	    			<div class="col-sm-4 col-xs-4 col-md-4 col-lg-4 col-xl-4">
+	    				<div class="form-group">
+	    					<label asp-for="Gender"> Gender:</label>
+							<select readonly disabled class="border form-control border-primary" name="Gender">
+								<option  value="Male">Male</option>
+								<option  value="Female">Female</option>
+								<option  value="other">other</option>
+							</select>
+						</div>
+	    			</div>
+				</div>
+				<div class="row">
+	    			<div class="col-sm-4 col-xs-4 col-md-4 col-lg-4 col-xl-4">
+	    				<div class="form-group">
+							<label asp-for="DateOfBirth" class="control-label"></label>
+							<input disabled type="date" @*asp-for="DateOfBirth"*@ class="border form-control border-primary"  /> 
+							<span asp-validation-for="DateOfBirth" class="text-danger"></span>
+						</div>		
+	    			</div>
+	    			<div class="col-sm-4 col-xs-4 col-md-4 col-lg-4 col-xl-4">
+						<div class="form-group">
+							<label asp-for="Country" class="control-label"></label>
+							<input disabled asp-for="Country"class="border form-control border-primary"  /> 
+							<span asp-validation-for="Country" class="text-danger"></span>
+						</div>		
+	    			</div>
+					<div class="col-sm-4 col-xs-4 col-md-4 col-lg-4 col-xl-4">
+	    				<div class="form-group">
+	    					<label asp-for="State" class="control-label"></label>
+							<input disabled asp-for="State"class="border form-control border-primary"  />
+							<span asp-validation-for="State" class="text-danger"></span>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-sm-4 col-xs-4 col-md-4 col-lg-4 col-xl-4">
+	    				<div class="form-group">
+	    					<label asp-for="PhoneNumber" class="control-label"></label>
+							<input disabled asp-for="PhoneNumber"class="border form-control border-primary"  />
+							<span asp-validation-for="PhoneNumber" class="text-danger"></span>
+						</div>
+	    			</div>
+					
+	    			<div class="col-sm-4 col-xs-4 col-md-4 col-lg-4 col-xl-4">
+	    				<div class="form-group">
+	    					<label asp-for="Qualification" class="control-label"></label>
+							<input disabled asp-for="Qualification"class="border form-control border-primary" />
+							<span asp-validation-for="Qualification" class="text-danger"></span>
+						</div>
+					</div>
+					<div class="col-sm-4 col-xs-4 col-md-4 col-lg-4 col-xl-4">
+						<div class="form-group">
+							<label asp-for="LGA" class="control-label"></label>
+							<input disabled asp-for="LGA"class="border form-control border-primary"  /> 
+							<span asp-validation-for="LGA" class="text-danger"></span>
+						</div>	
+	    			</div>
+				</div>
+				<div class="col-sm-4 col-xs-4 col-md-8 col-lg-8 col-xl-8 studentInput" >
+	    			<div class="form-group editInput">
+	    				<label asp-for="RedsidentAddress" class="control-label"></label>
+						<input disabled asp-for="RedsidentAddress"class="border form-control border-primary"  /> 
+						<span asp-validation-for="RedsidentAddress" class="text-danger"></span>
+					</div>
+				</div>
+				<div  class="checkbox text-center">
+						<button id="hideBtnFromEditUser" type="submit"class="border text-white w-50 mb-4 badge-pill border-success bg-primary">Save</button>
+						
+						<a id="changeDisableInput" class="border text-white mb-4 w-50 badge-pill px-4 py-2 border-primary bg-primary ">Edit Profile</a><br />
+					</div>
+			</form>
+			</div>
+		</div>
+
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

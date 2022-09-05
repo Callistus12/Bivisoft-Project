@@ -1,0 +1,120 @@
+﻿@model Calischool.Models.ErrorViewModel
+@{
+    ViewData["Title"] = "Dashboard";
+
+     Layout = "~/Views/Shared/_Layout.cshtml";
+ }
+ 
+  @if (Model != null && Model.Message != null)
+     {
+        if (Model.ErrorHappened)
+        {
+            <div class="alert alert-danger alert-dismissible">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Message:</strong> <b> @Model.Message   </b>
+            </div>
+        }
+        else
+        {
+            <div class="alert alert-success alert-dismissible">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Message:</strong> <b>  @Model.Message  </b>
+            </div>
+        }
+  }
+<div class="container">
+   
+    <div class="row">
+        <div class=" col-sm-6 col-xs-6 col-md-4 col-lg-4 col-xl-4">
+           <h2 class="text-primary"> Student Mentorship Table</h2>
+        </div>
+         <div class="col-sm-6 col-xs-6 col-md-4 col-lg-4 col-xl-4">
+             <form class="d-flex">
+                <input class="form-control me-sm-2" type="text" name="userDetails" placeholder="Search user first name:" />
+                <button class="btn btn-success btnAdmin form-control my-2 my-sm-0 " type="submit"> <i class="bi bi-search"></i></button>
+             </form>
+         </div>
+    </div><br/>
+    <table class="table table-bordered table-striped table-responsive adminTable" >
+        <thead class="bg-primary">
+            <tr>
+                <th>
+                    First Name
+                </th>
+                <th>
+                    Last Name
+                </th>
+                 <th>
+                    Email
+                </th> 
+                <th>
+                    CourseToMentor
+                </th>
+                <th>
+                    Mentor's Phone Number
+                </th>
+                <th>
+                   Mentor's Name
+                </th>
+                <th>
+                    CourseDuration
+                </th> 
+                <th>
+                    Assign Key
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.StudentMentorship.Count() > 0 && Model != null)
+            {
+                foreach (var obj in Model.StudentMentorship)
+                {
+                    <tr>
+                        <td >
+                            @obj.FirstName
+                        </td>
+                        <td>
+                            @obj.LastName
+                        </td>
+                        <td>
+                            @obj.Email
+                        </td> 
+                        <td>
+                            @obj.CourseToMentor
+                        </td>
+                        <td>
+                            @obj.PhoneNumberOfMentor
+                        </td>
+                        <td>
+                            @obj.NameOfTheMentor
+                        </td>
+                        <td>    
+                            @obj.CourseDuration
+                        </td>
+                        <td>
+                             
+                            <div class="btn-group w-75" role="group">
+                                @if(@obj.IsAssigned != true)
+                                {
+                                     <a id="AdminBtnForSignInRole" asp-controller="Mentorship" asp-action="MentorshipPosting" asp-route-studentId="@obj.Id">
+                                    <i class="bi bi-key iconSizeColor iconColor1"></i> </a>
+                                }
+                                else
+                                {
+                                    <i class="bi bi-check-all iconSizeColor iconColor1s"></i>
+                                }
+                                   
+                               
+                            </div>
+                        </td>
+                    </tr>
+                }
+            }
+        
+        </tbody>
+    </table>
+    
+</div>
+
+
+

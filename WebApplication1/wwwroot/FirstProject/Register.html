@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta description="">
+	<meta keyword="">
+	<title>class work</title>
+  	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-grid.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/class3.css">
+
+
+ 	<script src="js/jquery.slim.min.js"></script>
+  	<script src="js/popper.min.js"></script>
+  	<script src="js/bootstrap.bundle.min.js"></script>
+	 <script src="js/bootstrap.bundle.min.js"></script>
+</head>
+<body class="bg-light">
+	<div class="row">
+                <div class="col-lg-1 col-sm-5 ">
+                    <img src="./images/bivi.jpg" alt="Bivisoft"style="width: 50%; height: auto; border-radius: 100px;margin-left: 50px;">
+                </div>
+                <div class="col-lg-5 col-sm-6  ">
+                    <h1 style="color: blue; ">BIVISOFT ACADEMY</h1>
+                </div>
+     </div>
+    
+    <nav class="navbar navbar-expand-sm navbar-light">
+    	<a class="navbar-brand " href=""></a>
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"> <span class="navbar-toggler-icon"></span>
+        </button>
+	    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+	    	<ul class="navbar-nav">
+	    		<li class="navbar-item">
+	    			<a class="nav-link" href="Homepage.html" style="color: white;">Home</a>
+	    		</li>
+			   	<li class="navbar-item">
+			   		<a class="nav-link" href="Admin-reg-page.html"style="color: white;">RegAdmin</a>
+			   	</li>
+			   	<li class="navbar-item">
+			   		<a class="nav-link" href="Register.html"style="color: white;">RegStudent</a>
+			   	</li>
+			   	<li class="navbar-item">
+			   		<a class="nav-link" href="userpage.html"style="color: white;">Student-Login</a></li>
+			   	<li class="navbar-item">
+			   		<a class="nav-link" href="Admin-login-page.html"style="color: white;">Admin-Login</a>
+			   	</li>
+	    	</ul>
+	    </div>
+    	
+    </nav>
+    <!--form--><br>
+    <br>
+   <div class="container bg-light border border-primary border-top-0 border-bottom-0 rounded-left rounded-right w-75">
+   	<div class="container bg-primary">
+   		<h3 style="color: white;">Admin details</h3>
+   	</div>
+    	<form action="/action_page.php" class="was-validate" validated>
+	    	<div class="row">
+	    		<div class="col-lg-5 col-sm-5">
+	    			<div class="form-group">
+						<label for="FirstName"> First-Name: </label>
+						<input class="border form-control border-primary" type="text" name="FirstName" placeholder="Enter FirstName" required>
+						<div class="valid-feedback">valid</div>
+						<div class="invalid-feedback">please fill out this field </div>
+					</div>		
+	    		</div>
+	    		<div class="col-lg-5 col-sm-5">
+	    			<label for="LastName"> Last-Name: </label>
+					<input class="border form-control border-primary" type="text" name="LastName"placeholder="Enter LastName" required>
+					<div class="valid-feedback">valid</div>
+					<div class="invalid-feedback">please fill out this field </div>
+				</div>
+	    	</div>
+	    	<div class="row">
+	    		<div class="col-lg-5 col-sm-5">
+	    			<div class="form-group">
+						<label for="Email"> E-mail: </label>
+						<input class="border form-control border-primary" type="Email" name="Email" placeholder="Enter E-mail" required>
+						<div class="valid-feedback">valid</div>
+						<div class="invalid-feedback">please fill out this field </div>
+					</div>		
+	    		</div>
+	    		<div class="col-lg-5 col-sm-5">
+	    			<div class="form-group">
+	    				<label for="Age"> Age: </label>
+						<input class="border form-control border-primary" type="number" name="Age" placeholder="Enter Age" required>
+						<div class="valid-feedback">valid</div>
+						<div class="invalid-feedback">please fill out this field </div>
+					</div>
+	    		</div>
+			</div>
+			<div class="row text-center">
+	    		<div class="col-lg-5 col-sm-5">
+	    			<div class="form-group">
+						<label for="Gender"> Gender:</label>
+							<select  class="border form-control border-primary" name="Gender">
+								<option value="Male">Male</option>
+								<option value="Female">Female</option>
+								<option value="other">other</option>
+							</select>
+						<div class="valid-feedback">valid</div>
+						<div class="invalid-feedback">please fill out this field </div>
+					</div>		
+	    		</div>
+	    		<div class="col-lg-5 col-sm-5">
+	    			<div class="form-group">
+	    				<label for="Birthday"> Birthday:</label>
+			     		<input class="border form-control border-primary" type="date" name="Age" name="Birthday"></div>
+						<div class="valid-feedback">valid</div>
+						<div class="invalid-feedback">please fill out this field </div>
+					</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12 col-sm-12">
+					<div class="form-group">
+						<label for="Message"> Message:</label>
+						<textarea name="Message"placeholder="Enter your comment" class="border form-control border-primary";></textarea>
+						<div class="valid-feedback">valid</div>
+						<div class="invalid-feedback">please fill out this field </div>
+					</div>
+				</div>
+	   		</div>
+	   		<div>
+			<a href="Homepage.html"><button class="border form-control badge-pill border-primary bg-primary" type="submit" name="Register" value=""  style=" color: white">Register</button> </a>
+		    </div>		
+    	</form>
+    </div>
+<div class="container-fluid bg-dark p-2" style="margin-top: 300px; color: white;">
+         <footer class="fut">
+            <p>copyright &copy 2022.<a href="Homepage.html">Bivisoft academy</a> </p>
+        </footer> 
+	</div>   
+</body>
+</html>

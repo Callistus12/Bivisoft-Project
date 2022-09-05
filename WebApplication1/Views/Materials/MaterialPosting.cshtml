@@ -1,0 +1,68 @@
+﻿@model Calischool.Models.Materials
+
+@{
+    ViewData["Title"] = "materialPosting";
+	 Layout = "~/Views/Shared/_Layout.cshtml";
+   
+}
+
+
+
+
+
+
+
+  <div class=" container cardreg  border border-primary h-80 " >
+	 
+      <div class="card-body row">
+          <div class="col-sm-4 col-xs-4 col-md-4 col-lg-4 col-xl-4 text-center">
+			 <div><i class="bi bi-laptop" style="font-size: 150px; color:white;"></i></div>
+			  <div class="text-white">
+				  <h3>welcome</h3><br /><br />
+				  <p>
+					  In lifting others, we progress; thanks for your wonderful content!
+				  </p>
+			  </div>
+			 
+			 
+          </div>
+		  <div class="col-sm-4 col-xs-4 col-md-8 col-lg-8 col-xl-8 bg-light py-4 mb-4  register " >
+			    
+
+			  <div class="bg-primary text-white text-center reg1">
+				  <h2>UPLOAD MATERIAL FORM</h2>
+			  </div>
+			  <form asp-action="MaterialPosting" enctype="multipart/form-data">
+					<div class="row reg">
+	    				<div class="col-sm-4 col-xs-4 col-md-4 col-lg-5 col-xl-5 mt-5">
+	    					<div class="form-group">
+								<input asp-for="FileUploadedFromDevice" type="file" />
+							</div>	
+						</div>
+						<div class="col-sm-4 col-xs-4 col-md-4 col-lg-5 col-xl-5 mt-5 ">
+	    					<div class="form-group">
+								<input asp-for="CourseTitle"class="border form-control border-primary" placeholder="Course Title*" />
+								<input asp-for="UserId" hidden />
+								<span asp-validation-for="CourseTitle" class="text-danger"></span>
+							</div>		
+	    				</div>
+	    			</div>
+					<div class="col-sm-4 col-xs-4 col-md-12 col-lg-12 col-xl-12 ">
+	    					<div class="form-group">
+								<textarea name="Description"placeholder="Enter your Description" class="border form-control border-primary";></textarea> 
+								<span asp-validation-for="Description" class="text-danger"></span>
+							</div>		
+	    			</div>
+					<div class="row reg">
+						<div  class="checkbox text-center mb-3 col-sm-4 col-xs-4 col-md-4 col-lg-5 col-xl-5 mt-3 regbtn">
+							<button type="submit"class="border text-white w-80 badge-pill border-primary bg-primary">Upload</button>
+						</div>
+					</div>
+			  </form>
+		  </div>
+      </div>
+ </div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

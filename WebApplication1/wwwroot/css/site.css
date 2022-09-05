@@ -1,0 +1,290 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    color: #f6f9ff;
+}
+
+a {
+    color: #000066;
+    text-decoration: none;
+}
+
+    a:hover {
+        color: #2ae149;
+        text-decoration: none;
+    }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Roboto", sans-serif;
+}
+.register {
+    border-radius: 100px 0px 0px 100px;
+    margin-top: 30px;
+    margin-left: 21px;
+    margin-right: -21px;
+}
+.reg{
+    padding-left: 100px;
+    margin-bottom: 25px;
+}
+.reg1{
+    margin-top: 25px;
+    width: 500px;
+    margin-left: 100px;
+}
+.cardreg {
+    background: linear-gradient(to right, #000066 2%, #00ccff 100%)
+}
+.regbtn{
+    margin-bottom: 30px;
+}
+.student2 {
+    background: linear-gradient(to right, #000066 2%, #00ccff 100%);
+    border:solid;
+    height:100px;
+    margin-bottom:-100px
+
+}
+.studentText{
+    padding-top:10px;
+    margin-top:20px;
+}
+.acouuntBtn{
+    margin-left:60%;
+    
+}
+.adminIcon{
+    font-size:2em;
+
+}
+.btnAdmin{
+    width:38px;
+    display:flex;
+}
+.adminTable{
+    width:90%;
+}
+.editform {
+    outline-color:skyblue;
+    border-width: 20px;
+}
+/*.showOffTime {
+    background: linear-gradient(to right, #000066 2%, #00ccff 100%);
+}*/
+.studentInput{
+   margin-left:120px;
+   
+}
+.layoutList{
+    
+    margin-left:1200px;
+}
+.footerbase{
+    border:solid;
+    border-radius:25px;
+   /* margin-bottom:24px*/
+}
+
+.userSideBar {
+    background: linear-gradient(to right, #000066 2%, #00ccff 100%);
+    width: 15%;
+    text-align:center;
+    min-height:300px;
+}
+.studentLine{
+    margin-top:27px;
+}
+.adminTableBtn{
+    margin-left:130px
+}
+.layoutView {
+    background: linear-gradient(to right, #000066 2%, #00ccff 100%);
+}
+.iconSizeColor{
+    font-size:25px;
+}
+.iconColor1{
+    color:green;
+}
+.iconColor2 {
+    color: red;
+}
+#loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 120px;
+    height: 120px;
+    margin: -76px 0 0 -76px;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+    from {
+        bottom: -100px;
+        opacity: 0
+    }
+
+    to {
+        bottom: 0px;
+        opacity: 1
+    }
+}
+
+@keyframes animatebottom {
+    from {
+        bottom: -100px;
+        opacity: 0
+    }
+
+    to {
+        bottom: 0;
+        opacity: 1
+    }
+}
+
+#myDiv {
+    display: none;
+    text-align: center;
+}
+
+:root {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    background: #f6f9ff;
+    color: #444444;
+}
+
+#main {
+    margin-top: 60px;
+    padding: 20px 30px;
+    transition: all 0.3s;
+}
+
+@media (max-width: 1199px) {
+    #main {
+        padding: 20px;
+    }
+}
+
+.pagetitle {
+    margin-bottom: 10px;
+}
+
+.pagetitle h1 {
+    font-size: 24px;
+    margin-bottom: 0;
+    font-weight: 600;
+    color: #012970;
+}
+.blog .entry .entry-footer {
+    padding-top: 10px;
+    border-top: 1px solid #e6e6e6;
+}
+
+.blog .entry .entry-footer i {
+    color: #5e5e5e;
+    display: inline;
+}
+
+.blog .entry .entry-footer a {
+    color: #1e1e1e;
+    transition: 0.3s;
+}
+
+.blog .entry .entry-footer a:hover {
+    color: #1bbd36;
+}
+
+.blog .entry .entry-footer .cats {
+    list-style: none;
+    display: inline;
+    padding: 0 20px 0 0;
+    font-size: 14px;
+}
+
+    .blog .entry .entry-footer .cats li {
+        display: inline-block;
+    }
+
+.blog .entry .entry-footer .tags {
+    list-style: none;
+    display: inline;
+    padding: 0;
+    font-size: 14px;
+}
+
+.blog .entry .entry-footer .tags li {
+    display: inline-block;
+}
+
+.blog .entry .entry-footer .tags li + li::before {
+    padding-right: 6px;
+    color: #6c757d;
+    content: ",";
+}
+
+.blog .entry .entry-footer .share {
+    font-size: 16px;
+}
+
+.blog .entry .entry-footer .share i {
+    padding-left: 5px;
+}
+

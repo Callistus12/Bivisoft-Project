@@ -1,0 +1,54 @@
+﻿@model Calischool.ViewModel.LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+     Layout = "~/Views/Shared/_Layout.cshtml";
+  
+}
+  <div class=" container cardreg bg-light border border-primary " style="width:500px; margin-top: 100px" >
+       @if (Model != null)
+       {
+            if (Model.ErrorHappened)
+            {
+                <div class="alert alert-danger alert-dismissible">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>Message:</strong> <b> @Model.Message   </b>
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-success alert-dismissible">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>Message:</strong> <b>  @Model.Message  </b>
+                </div>
+            }
+       }
+      <form asp-action="Login">
+
+          <div class="card-body">
+              <div class="card-header bg-primary text-center">
+   		        <h3 style="color: white;"> Login</h3>
+              </div>
+              <div>
+                   <label asp-for="Email" class="control-label text-white"></label>
+                    <input asp-for="Email" type="email" class="form-control " />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+              </div>
+              <div>
+                   <label asp-for="Password" class="control-label text-white"></label>
+                    <input asp-for="Password" type="password" class="form-control" placeholder="4-6 character" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+              </div>
+              <div>
+                   <label asp-for="RememberMe" class="form-label text-white">
+                         <input type="checkbox" asp-for="RememberMe" />
+                            @Html.DisplayNameFor(m => m.RememberMe)
+                     </label>
+              </div>
+              <div  class="checkbox">
+                    <button type="submit"class="border text-white w-75 ml-5 mb-4 text-center badge-pill border-primary bg-primary">Log-In</button>
+                     <a class="border text-white text-center badge-pill border-success bg-danger acouuntBtn" asp-area="" asp-controller="Account" asp-action="ForgotPassword">Forgot Password</a>
+              </div>
+          </div>
+      </form>
+
+ </div>

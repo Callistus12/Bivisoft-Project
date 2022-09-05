@@ -1,0 +1,108 @@
+*{
+   box-sizing: border-box;
+}
+body{
+   width: 99%;
+   display: center;
+}
+.nav-link{
+   color: white;
+}
+/*b
+
+.head{
+	width:100%;
+	height: auto;
+	border-left: 0px;
+	padding: 2px;
+	
+}
+/*sup*/
+{
+   font-size: smaller;
+   color: blue;
+   float: left;
+}
+
+.head h1{
+	font-size: 2em;
+	font-family: serif;
+	color: red;
+	margin-left: 10px;
+   display: table-cell;
+   float: left;
+   padding-left: 45px;
+}
+
+.navbar{
+	background-color:blue;
+	/*width: 100%;*/
+	color: white;
+}
+
+a{
+	text-decoration: none;
+	color: white;
+}
+a:hover{
+       background-color: lightblue;
+       color: black;
+       padding: 10px;
+       border-radius: 10px;
+       text-decoration-line:none;
+   }
+   .school img{
+   	    width: 100%;
+   	    height: 347px;
+   	    margin: 0px;
+   	    padding-top: 0px;
+   	    margin-top: -18px;
+   }
+   .stud{
+   	    padding-left: 20px;
+   	    color: red;
+   }
+   .dat{
+   	display: inline-block;
+   	padding-left: 10px;
+   }
+   .clad{
+   	/*padding-left: 90%;*/
+   	text-align: top;
+   	/*margin-top: -27px;*/
+   	list-style: none;
+      display: inline;
+
+   }
+   .cus{
+   	 display: inline;
+   	 float: left;
+   	 margin-left: 10px;
+   	 background-color: #fff;
+   }
+   .cus1{
+   	 display: inline;
+   	 float: left;
+   	 margin-left: 1px;
+   	 background-color: #fff;
+   	 margin-top: -21.50px;
+   }
+
+   .hul{
+   	padding-left: : 260px;
+   }
+   .mak{
+   	padding-left: 260px;
+
+   }
+   .fut{
+   	text-align: center;
+   	color: red
+   	padding-bottom:10px;
+   	margin-bottom: 10px;
+   }
+   table, th, td{
+      border: 4px solid blue;
+      border-collapse: collapse;
+      padding: 10px;
+   }

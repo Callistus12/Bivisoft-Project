@@ -1,0 +1,82 @@
+﻿@model Calischool.Models.ApplicationUser
+
+@{
+    ViewData["Title"] = "RegisterStudent";
+}
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+}
+
+
+<div class="container bg-light border rounded-10">
+    
+    <div class="student2 container m-0">
+
+    </div>
+    <div class="row">
+        <div class=" col-sm-12 col-xs-12 col-md-4 col-lg-3 col-xl-3 d-flex" style="padding-left: 50px;">
+            <img src="~/FirstProject/images/studentImage.jpeg" width="150px"; height="150px" style="border-radius: 50%;margin-top:-38px" />
+        </div>
+        <div class="col-lg-6 studentText">
+           <h3>Welcome !&nbsp; @Model.LastName &nbsp; @Model.FirstName</h3> 
+        </div>
+        
+        <div  class="col-lg-3 text-center studentText text-end "> 
+            <a class="border text-white studentIndexBtn badge-pill border-primary bg-primary" asp-area="" asp-controller="Student" asp-action="Edit"> Profile</a>
+	    </div>
+    </div>
+   
+</div>
+
+     
+<div class=" userSideBar ml-5 w-30 ">
+    <ul class="nav navbar-nav  side-nav">
+        <li class="studentLine">
+            <a class="text-light " href="#" data-toggle="collapse" data-target="#submenu-1"><i class=" bi bi-arrow-down-square"></i>&nbsp;&nbsp; My Courses</a>
+            <ul id="submenu-1" class=" collapse">
+                <li class="dropdown my-3">
+                    <a class="text-light dropdown-toggle" href="#"  data-toggle="dropdown">Available Mentor <b class="fa fa-angle-down"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a  href="#">Callistus</a></li>&nbsp;
+                        <li><a  href="#">Callistus</a></li>&nbsp;
+                        <li class="divider"></li>
+                        <li><a  href="#">Callistus</a></li>
+                    </ul>
+                </li>&nbsp;
+                <li><a class="text-light" asp-controller="Materials" asp-action="StudentMaterials"> Available Courses</a></li>&nbsp;
+
+                <li><a class="text-light " href="#">CSS</a></li>&nbsp;
+
+                <li><a class="text-light" href="#"> BOOTSTRAP</a></li>&nbsp;
+
+                <li><a class="text-light " href="#"> JAVASCRIPT</a></li>&nbsp;
+
+                <li><a class="text-light" href="#">JQUERY</a></li>&nbsp;
+
+                <li><a class="text-light" href="#"> C#</a></li>&nbsp;
+
+                <li><a class="text-light" href="#"> ASP.NET MVC</a></li>&nbsp;
+            </ul>
+        </li>
+        <li class="studentLine">
+            <a class="text-light" href="#" data-toggle="collapse" data-target="#submenu-2"><i class="bi bi-person-workspace"></i> &nbsp;Contact Admin</a>
+            <ul id="submenu-2" class="collapse">
+                <li><a  class="text-light" asp-controller="Mentorship" asp-action="StudentMentorship">For Mentorship</a></li>&nbsp;
+                <li><a  class="text-light"asp-controller="Mentorship" asp-action="MentorshipTable"> Mentorship Table</a></li>&nbsp;
+                <li><a  class="text-light"@*@*asp-controller="Mentorship" asp-action="MentorshipTable"*@> Take permission</a></li>&nbsp;
+                <li><a  class="text-light" href="#">Submit your project</a></li>&nbsp;
+            </ul>
+        </li>
+        <li class="studentLine">
+            <a  class="text-light studentLine" href="#"><i class="bi bi-view-stacked"></i>&nbsp; &nbsp;View projects</a>
+        </li>
+        <li class="studentLine">
+            <a  class="text-light studentLine" href="#"><i class="bi bi-three-dots-vertical"></i>&nbsp; &nbsp; more items</a>
+        </li>
+        <li class="studentLine">
+            <a  class="text-light studentLine" href="#"> <i class="bi bi-card-list"></i> &nbsp; &nbsp; Other issues</a>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,64 @@
+﻿@model Calischool.Models.ErrorViewModel
+@{
+    ViewData["Title"] = "StudentMaterials";
+     Layout = "~/Views/Shared/_Layout.cshtml";
+ 
+}
+  @if (Model != null && Model.Message != null)
+     {
+        if (Model.ErrorHappened)
+        {
+            <div class="alert alert-danger alert-dismissible">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Message:</strong> <b> @Model.Message   </b>
+            </div>
+        }
+        else
+        {
+            <div class="alert alert-success alert-dismissible">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Message:</strong> <b>  @Model.Message  </b>
+            </div>
+        }
+  }
+<div class="container">
+   
+    <div class="row">
+        <div class=" col-sm-6 col-xs-6 col-md-5 col-lg-5 col-xl-5">
+           <h2 class="text-primary"> Student Materials</h2>
+        </div>
+        
+         <div class="col-sm-6 col-xs-6 col-md-4 col-lg-4 col-xl-4">
+             <form class="d-flex">
+                <input class="form-control me-sm-2" type="text" name="userDetails" placeholder="Search Program Name:" />
+                <button class="btn btn-success btnAdmin form-control my-2 my-sm-0 " type="submit"> <i class="bi bi-search"></i></button>
+             </form>
+         </div>
+    </div><br/>
+    <div class="container row">
+        @if (Model.StudentMaterials.Count() > 0 && Model != null)
+        {
+            foreach (var item in Model.StudentMaterials)
+            {
+                <div class="card col-lg-4 col-sm-10">
+                    <div class="card-header bg-primary">
+                         <a href="#" class="close bg-danger" data-dismiss="alert" aria-label="close">&times;</a>
+                        <h2 class="text-light text-center">@item.CourseTitle</h2>
+                    </div>
+                    <div class="card-body ">
+                        <img src="@item.FileUrl" height="300px" width="300px"/>
+                    </div>
+                    <div class="card-body">
+                        <p>@item.Description</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#"><h2 style="text-align: center;">Download</h2></a>
+                    </div>
+                </div>
+            }
+        }
+       
+    </div>
+ </div>
+
+
